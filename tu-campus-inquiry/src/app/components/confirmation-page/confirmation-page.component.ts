@@ -90,7 +90,7 @@ export class ConfirmationPageComponent implements OnInit {
             .subscribe(
               () => {
                 console.log('Email sent successfully!');
-                this.router.navigateByUrl('/submission');
+                this.router.navigateByUrl('/submission-page');
               },
               (err) => { console.log('Error sending email:', err); }
             );

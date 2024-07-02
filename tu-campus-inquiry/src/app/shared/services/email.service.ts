@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmailService {
-  // URL endpoint for the sending emails
+  // URL endpoint for sending emails
   private emailUrl = 'http://localhost:3000/api/inquiries/send-email'; 
 
   // Inject the HttpClient service

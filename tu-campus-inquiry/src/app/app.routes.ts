@@ -7,6 +7,7 @@ import { ConfirmationPageComponent } from './components/confirmation-page/confir
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { ContactPageComponent } from './components/contact-page/contact-page.component';
 
 export const routes: Routes = [
     {
@@ -32,12 +33,16 @@ export const routes: Routes = [
         component: InquiryFormPageComponent
     },
     {
-        path: 'confirmation',
+        path: 'confirmation-page',
         component: ConfirmationPageComponent
     },
     {
-        path: 'submission',
+        path: 'submission-page',
         component: SubmissionPageComponent
+    },
+    {
+        path: 'contact-page',
+        component: ContactPageComponent
     },
     {
         path: '**',

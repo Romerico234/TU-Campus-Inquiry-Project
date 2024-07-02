@@ -31,7 +31,7 @@ export class InquiryFormPageComponent implements OnInit {
       this.inquiry.completed = false;
 
       // If all form fields are valid, navigate to the confirmation route (confirmation component)
-      this.router.navigate(['/confirmation'], {
+      this.router.navigate(['/confirmation-page'], {
         queryParams: { inquiry: JSON.stringify(this.inquiry), }
       });
     }
