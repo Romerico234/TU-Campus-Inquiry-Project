@@ -19,11 +19,11 @@ export const routes: Routes = [
         component: HomePageComponent
     },
     {
-        path: 'login',
+        path: 'db-admin/login',
         component: LoginPageComponent
     },
     {
-        path: 'inquiries',
+        path: 'db-admin/list-of-inquiries',
         component: InquiryListPageComponent,
         canActivate: [AuthGuard]
     },
