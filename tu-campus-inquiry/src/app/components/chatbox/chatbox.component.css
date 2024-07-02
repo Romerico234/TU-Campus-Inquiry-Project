@@ -1,0 +1,57 @@
+.chatbox {
+    border: 2px solid black; 
+    border-radius: 15px; 
+    padding: 10px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    outline: 2px solid #ffcc00; 
+    outline-offset: -4px; 
+}
+
+.chatbox-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.chatbox-message {
+    margin-bottom: 5px;
+}
+
+.chatbox-message-user {
+    font-weight: bold;
+}
+
+.chatbox-input {
+    display: flex;
+}
+
+.chatbox-input input {
+    flex-grow: 1;
+    margin-right: 5px;
+    border: 1px solid #ffcc00; /* Yellow border for input */
+    border-radius: 5px; /* Rounded corners for input */
+    padding: 5px;
+}
+
+.chatbox-input button {
+    flex-shrink: 0;
+    background-color: #ffcc00; /* Yellow background */
+    border: 1px solid black; /* Black border */
+    color: black; /* Black text */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.chatbox-input button:hover {
+    background-color: #ffeb99; /* Lighter yellow on hover */
+}

@@ -1,0 +1,73 @@
+<div class="container mt-4">
+    <h1 class="mb-4 text-left">Inquiry Form</h1>
+    <h4 class="mb-4 text-left">
+        Fill out the form below. One of our admissions counselors will come into contact with your request and provide
+        more information.
+    </h4>
+    <form #inquiryForm="ngForm" (ngSubmit)="submitInquiry(inquiryForm)" novalidate class="card p-4 shadow-sm">
+        <!--First Name Field-->
+        <div class="mb-3">
+            <label class="form-label" for="firstName">First Name*</label>
+            <input class="form-control" id="firstName" name="firstName" [(ngModel)]="inquiry.firstName"
+                placeholder="First Name">
+            <div *ngIf="submitted && invalidFields.firstName" class="text-danger">This field is required</div>
+        </div>
+
+        <!--Last Name Field-->
+        <div class="mb-3">
+            <label class="form-label" for="lastName">Last Name*</label>
+            <input class="form-control" id="lastName" name="lastName" [(ngModel)]="inquiry.lastName"
+                placeholder="Last Name">
+            <div *ngIf="submitted && invalidFields.lastName" class="text-danger">This field is required</div>
+        </div>
+
+        <!--Email Field-->
+        <div class="mb-3">
+            <label class="form-label" for="email">Email*</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="inquiry.email"
+                placeholder="Email">
+            <div *ngIf="submitted && invalidFields.email" class="text-danger">
+                <ng-container *ngIf="!inquiry.email">This field is required</ng-container>
+                <ng-container *ngIf="inquiry.email && !isEmailValid(inquiry.email)">This does not appear to be a valid
+                    email address</ng-container>
+            </div>
+        </div>
+
+        <!--Phone Number Field-->
+        <div class="mb-3">
+            <label class="form-label" for="phone">Phone Number*</label>
+            <input class="form-control" id="phone" name="phone" [(ngModel)]="inquiry.phone" placeholder="###-###-####"
+                pattern="^\d{10}$" required />
+            <div *ngIf="submitted && invalidFields.phone" class="text-danger">
+                <ng-container *ngIf="!inquiry.phone">This field is required</ng-container>
+            </div>
+        </div>
+
+        <!--Campus Field-->
+        <div class="mb-3">
+            <label class="form-label" for="campus">Which campus (college) are you interested in?*</label>
+            <select class="form-select" id="campus" name="campus" [(ngModel)]="inquiry.campus">
+                <option value="" disabled>Select campus...</option>
+                <option value="College of Business and Economics">College of Business and Economics</option>
+                <option value="College of Education">College of Education</option>
+                <option value="College of Fine Arts and Communication">College of Fine Arts and Communication</option>
+                <option value="College of Health Professions">College of Health Professions</option>
+                <option value="College of Liberal Arts">College of Liberal Arts</option>
+                <option value="Jess and Mildred Fisher College of Science and Mathematics">Jess and Mildred Fisher
+                    College of Science and Mathematics</option>
+                <option value="Honors College">Honors College</option>
+                <option value="TU in Northeastern Maryland (TUNE)">TU in Northeastern Maryland (TUNE)</option>
+            </select>
+            <div *ngIf="submitted && invalidFields.campus" class="text-danger">This field is required</div>
+        </div>
+
+        <!--Workshop Response Field-->
+        <div class="mb-3">
+            <label class="form-label" for="workshopResponse">Which workshop would you like to learn more about?</label>
+            <textarea class="form-control" id="workshopResponse" name="workshopResponse"
+                [(ngModel)]="inquiry.workshopResponse" rows="5" cols="50"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Request Info</button>
+    </form>
+</div>

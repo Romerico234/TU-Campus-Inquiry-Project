@@ -1,0 +1,74 @@
+<div class="container mt-4">
+    <h1 class="mb-4 text-left">List of Requests</h1>
+    <table class="table table-sm table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Time Uploaded At</th>
+                <th>Completion Status</th>
+                <th colspan="3" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (inquiry of inquiries; track inquiry._id) {
+            <tr *ngIf="editingInquiryId !== inquiry._id">
+                <td>{{ inquiry.firstName }}</td>
+                <td>{{ inquiry.lastName }}</td>
+                <td>{{ inquiry.email }}</td>
+                <td>{{ inquiry.phone }}</td>
+                <td>{{ inquiry.created_at ? formatDate(inquiry.created_at) : '' }}</td>
+                <td>{{ inquiry.completed ? 'Complete' : 'Pending' }}</td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn" [ngClass]="{
+              'btn-success': !inquiry.completed,
+              'btn-warning': inquiry.completed
+            }" (click)="toggleCompletion(inquiry)">
+                            {{ inquiry.completed ? 'Mark as Incomplete' : 'Mark as Complete' }}
+                        </button>
+                    </div>
+                </td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" (click)="editInquiry(inquiry._id)">
+                            Edit
+                        </button>
+                    </div>
+                </td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-danger" (click)="deleteInquiry(inquiry)">
+                            Remove
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngIf="editingInquiryId === inquiry._id">
+                <td><input type="text" [(ngModel)]="inquiry.firstName" class="form-control" /></td>
+                <td><input type="text" [(ngModel)]="inquiry.lastName" class="form-control" /></td>
+                <td><input type="text" [(ngModel)]="inquiry.email" class="form-control" /></td>
+                <td><input type="text" [(ngModel)]="inquiry.phone" class="form-control" /></td>
+                <td>{{ inquiry.created_at ? formatDate(inquiry.created_at) : '' }}</td>
+                <td>{{ inquiry.completed ? 'Complete' : 'Pending' }}</td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-success" (click)="saveInquiry(inquiry)">
+                            Save
+                        </button>
+                    </div>
+                </td>
+                <td class="text-center" colspan="2">
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" (click)="editingInquiryId = null">
+                            Cancel
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

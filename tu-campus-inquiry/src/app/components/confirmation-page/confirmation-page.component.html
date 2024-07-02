@@ -1,0 +1,102 @@
+<h1 class="text-left my-4">Confirm Request</h1>
+
+<div *ngIf="inquiry" class="card p-4 shadow-sm">
+  <div class="mb-3">
+    <label class="form-label">First Name*</label>
+    <div class="input-group">
+      <input class="form-control" [(ngModel)]="inquiry.firstName" [disabled]="!isFieldEditing('firstName')" placeholder="First Name">
+      <div class="input-group-append">
+        <button *ngIf="!isFieldEditing('firstName')" class="btn btn-primary"
+          (click)="editField('firstName')">Edit</button>
+        <button *ngIf="isFieldEditing('firstName')" class="btn btn-success" (click)="saveChanges()">Save</button>
+        <button *ngIf="isFieldEditing('firstName')" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+    <div *ngIf="invalidFields.firstName" class="text-danger mt-1">This field is required</div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Last Name*</label>
+    <div class="input-group">
+      <input class="form-control" [(ngModel)]="inquiry.lastName" [disabled]="!isFieldEditing('lastName')" placeholder="Last Name">
+      <div class="input-group-append">
+        <button *ngIf="!isFieldEditing('lastName')" class="btn btn-primary"
+          (click)="editField('lastName')">Edit</button>
+        <button *ngIf="isFieldEditing('lastName')" class="btn btn-success" (click)="saveChanges()">Save</button>
+        <button *ngIf="isFieldEditing('lastName')" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+    <div *ngIf="invalidFields.lastName" class="text-danger mt-1">This field is required</div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Email*</label>
+    <div class="input-group">
+      <input type="email" class="form-control" [(ngModel)]="inquiry.email" [disabled]="!isFieldEditing('email')" placeholder="Email">
+      <div class="input-group-append">
+        <button *ngIf="!isFieldEditing('email')" class="btn btn-primary" (click)="editField('email')">Edit</button>
+        <button *ngIf="isFieldEditing('email')" class="btn btn-success" (click)="saveChanges()">Save</button>
+        <button *ngIf="isFieldEditing('email')" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+    <div *ngIf="invalidFields.email" class="text-danger mt-1">
+      <ng-container *ngIf="!inquiry.email">This field is required</ng-container>
+      <ng-container *ngIf="inquiry.email && !isEmailValid(inquiry.email)">This does not appear to be a valid email
+        address</ng-container>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Phone Number*</label>
+    <div class="input-group">
+      <input class="form-control" [(ngModel)]="inquiry.phone" [disabled]="!isFieldEditing('phone')" placeholder="###-###-####">
+      <div class="input-group-append">
+        <button *ngIf="!isFieldEditing('phone')" class="btn btn-primary" (click)="editField('phone')">Edit</button>
+        <button *ngIf="isFieldEditing('phone')" class="btn btn-success" (click)="saveChanges()">Save</button>
+        <button *ngIf="isFieldEditing('phone')" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+    <div *ngIf="invalidFields.phone" class="text-danger mt-1">This field is required</div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Which campus (college) are you interested in?*</label>
+    <select class="form-select" [(ngModel)]="inquiry.campus" [disabled]="!isFieldEditing('campus')">
+      <option value="" disabled>Select campus...</option>
+      <option value="College of Business and Economics">College of Business and Economics</option>
+      <option value="College of Education">College of Education</option>
+      <option value="College of Fine Arts and Communication">College of Fine Arts and Communication</option>
+      <option value="College of Health Professions">College of Health Professions</option>
+      <option value="College of Liberal Arts">College of Liberal Arts</option>
+      <option value="Jess and Mildred Fisher College of Science and Mathematics">Jess and Mildred Fisher College of
+        Science and Mathematics</option>
+      <option value="Honors College">Honors College</option>
+      <option value="TU in Northeastern Maryland (TUNE)">TU in Northeastern Maryland (TUNE)</option>
+    </select>
+    <div *ngIf="invalidFields.campus" class="text-danger mt-1">This field is required</div>
+    <div class="mt-2">
+      <button *ngIf="!isFieldEditing('campus')" class="btn btn-primary btn-sm"
+        (click)="editField('campus')">Edit</button>
+      <button *ngIf="isFieldEditing('campus')" class="btn btn-success btn-sm" (click)="saveChanges()">Save</button>
+      <button *ngIf="isFieldEditing('campus')" class="btn btn-secondary btn-sm" (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Which workshop would you like to learn more about?</label>
+    <textarea class="form-control" [(ngModel)]="inquiry.workshopResponse"
+      [disabled]="!isFieldEditing('workshopResponse')" rows="4"></textarea>
+    <div class="mt-2">
+      <button *ngIf="!isFieldEditing('workshopResponse')" class="btn btn-primary btn-sm"
+        (click)="editField('workshopResponse')">Edit</button>
+      <button *ngIf="isFieldEditing('workshopResponse')" class="btn btn-success btn-sm"
+        (click)="saveChanges()">Save</button>
+      <button *ngIf="isFieldEditing('workshopResponse')" class="btn btn-secondary btn-sm"
+        (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" [disabled]="!allFieldsValid" (click)="submitAndSendConfirmationEmail()">Submit and Receive Confirmation
+    Email</button>
+
+</div>
