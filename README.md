@@ -1,6 +1,6 @@
-# Towson University Campus Inquiry Form
+# Towson University Campus Inquiry 
 
-This repository contains my Towson University Campus Inquiry Form project for my COSC 484 class. This application serves as a platform for students to submit requests and connect with counselors. Below are the details and setup instructions for the project.
+This repository contains my Towson University Campus Inquiry project for my COSC 484 class. This application serves as a platform for students to submit requests and connect with counselors. Below are the details and setup instructions for the project.
 
 ## Technologies Used:
 - **MEAN Stack**: MongoDB, Express.js (CORS), Angular, Node.js
@@ -11,6 +11,7 @@ This repository contains my Towson University Campus Inquiry Form project for my
 The Towson University Campus Inquiry Form facilitates communication between students and counselors by allowing students to submit inquiries and requests directly through the application. Counselors can then respond to these inquiries.
 
 ## Planned Features:
+- I will implement validation for the phone number form field
 - I am currently in the process of implementing a chatbox feature.
 
 ## Setup Instructions:
