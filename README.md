@@ -23,14 +23,15 @@ To run the server locally, follow these steps:
      ```
      MONGODB_URI="<Your MongoDB URI>"
      DB_NAME="<Your Database Name>"
-     PORT=<Your desired port number>
+     PORT=<Some Port Number>
      EMAIL_ADDRESS="<Your Email Address>"
      EMAIL_PASSWORD="<Your Email Password>"
      ```
      **Note**: Ensure that you use an authenticated email address (Outlook or any other service) to avoid any email delivery issues.
 
-2. **Run the Backend**:
+2. **Install and Run the Backend**:
    - Navigate to the `backend` directory.
+   - Use `npm instal` to install packages
    - Use `nodemon` to start the server:
      ```
      npm install
@@ -38,14 +39,15 @@ To run the server locally, follow these steps:
      nodemon server.js
      ```
 
-3. **Run the Angular Application**:
+3. **Install and Run the Angular Application**:
    - Open a new terminal window.
-   - Navigate to the root directory of the project.
-   - Start the Angular application:
+   - Navigate to the `tu-campus-inquiry` directory.
+   - Use `npm instal` to install packages
+   - Use `ng serve` to start the Angular application:
      ```
      npm install
      ng serve
      ```
 
-4. **Access the Application**:
+4. **Open Application**:
    - Once both the backend server and Angular application are running, access the application by navigating to `http://localhost:4200` in your browser.
