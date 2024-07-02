@@ -7,7 +7,7 @@
     <form #inquiryForm="ngForm" (ngSubmit)="submitInquiry(inquiryForm)" novalidate class="card p-4 shadow-sm">
         <!--First Name Field-->
         <div class="mb-3">
-            <label class="form-label" for="firstName">First Name*</label>
+            <label class="form-label" for="firstName">First Name<span class="text-danger">*</span></label>
             <input class="form-control" id="firstName" name="firstName" [(ngModel)]="inquiry.firstName"
                 placeholder="First Name">
             <div *ngIf="submitted && invalidFields.firstName" class="text-danger">This field is required</div>
@@ -15,7 +15,7 @@
 
         <!--Last Name Field-->
         <div class="mb-3">
-            <label class="form-label" for="lastName">Last Name*</label>
+            <label class="form-label" for="lastName">Last Name<span class="text-danger">*</span></label>
             <input class="form-control" id="lastName" name="lastName" [(ngModel)]="inquiry.lastName"
                 placeholder="Last Name">
             <div *ngIf="submitted && invalidFields.lastName" class="text-danger">This field is required</div>
@@ -23,7 +23,7 @@
 
         <!--Email Field-->
         <div class="mb-3">
-            <label class="form-label" for="email">Email*</label>
+            <label class="form-label" for="email">Email<span class="text-danger">*</span></label>
             <input type="email" class="form-control" id="email" name="email" [(ngModel)]="inquiry.email"
                 placeholder="Email">
             <div *ngIf="submitted && invalidFields.email" class="text-danger">
@@ -35,7 +35,7 @@
 
         <!--Phone Number Field-->
         <div class="mb-3">
-            <label class="form-label" for="phone">Phone Number*</label>
+            <label class="form-label" for="phone">Phone Number<span class="text-danger">*</span></label>
             <input class="form-control" id="phone" name="phone" [(ngModel)]="inquiry.phone" placeholder="###-###-####"
                 pattern="^\d{10}$" required />
             <div *ngIf="submitted && invalidFields.phone" class="text-danger">
@@ -45,7 +45,7 @@
 
         <!--Campus Field-->
         <div class="mb-3">
-            <label class="form-label" for="campus">Which campus (college) are you interested in?*</label>
+            <label class="form-label" for="campus">Which campus (college) are you interested in?<span class="text-danger">*</span></label>
             <select class="form-select" id="campus" name="campus" [(ngModel)]="inquiry.campus">
                 <option value="" disabled>Select campus...</option>
                 <option value="College of Business and Economics">College of Business and Economics</option>
