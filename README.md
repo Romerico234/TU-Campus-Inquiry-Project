@@ -1,6 +1,6 @@
 # Towson University Campus Inquiry 
 
-This repository contains my Towson University Campus Inquiry project for my COSC 484 class. This application serves as a platform for students to submit requests and connect with counselors. Below are the details and setup instructions for the project.
+This repository contains my final project for COSC 484. This web application serves as a platform for students to submit requests and connect with counselors. Below are the details and setup instructions for the project.
 
 ## Technologies Used:
 - **MEAN Stack**: MongoDB, Express.js (CORS), Angular, Node.js
