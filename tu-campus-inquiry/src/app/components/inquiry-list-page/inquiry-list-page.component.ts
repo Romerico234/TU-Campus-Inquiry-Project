@@ -5,14 +5,15 @@ import { InquiryData } from '../../shared/models/inquiry-data.models';
 import { DataService } from '../../shared/services/data.service';
 
 @Component({
-  selector: 'app-inquiry-list',
+  selector: 'app-inquiry-list-page',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './inquiry-list.component.html',
+  templateUrl: './inquiry-list-page.component.html',
+  styleUrl: './inquiry-list-page.component.css'
 })
 
 /* Not doing validation for this page because authorized users can only it */
-export class InquiryListComponent implements OnInit {
+export class InquiryListPageComponent implements OnInit {
   inquiries: InquiryData[] = [];
   editingInquiryId: string | null = null;
 

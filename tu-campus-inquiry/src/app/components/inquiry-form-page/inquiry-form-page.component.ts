@@ -6,12 +6,12 @@ import { InquiryData } from '../../shared/models/inquiry-data.models';
 import { ValidationService } from '../../shared/services/validation.service';
 
 @Component({
-  selector: 'app-inquiry-form',
+  selector: 'app-inquiry-form-page',
   standalone: true,
   imports: [FormsModule, CommonModule],
-  templateUrl: './inquiry-form.component.html',
+  templateUrl: './inquiry-form-page.component.html',
 })
-export class InquiryFormComponent implements OnInit {
+export class InquiryFormPageComponent implements OnInit {
   inquiry: InquiryData = {};
   submitted = false;
 

@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { InquiryListComponent } from './components/inquiry-list/inquiry-list.component';
-import { InquiryFormComponent } from './components/inquiry-form/inquiry-form.component';
-import { HomeComponent } from './components/home/home.component';
+import { InquiryListPageComponent } from './components/inquiry-list-page/inquiry-list-page.component';
+import { InquiryFormPageComponent } from './components/inquiry-form-page/inquiry-form-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { SubmissionPageComponent } from './components/submission-page/submission-page.component';
 import { ConfirmationPageComponent } from './components/confirmation-page/confirmation-page.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
@@ -16,20 +16,20 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomePageComponent
     },
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginPageComponent
     },
     {
         path: 'inquiries',
-        component: InquiryListComponent,
+        component: InquiryListPageComponent,
         canActivate: [AuthGuard]
     },
     {
         path: 'inquiry-form',
-        component: InquiryFormComponent
+        component: InquiryFormPageComponent
     },
     {
         path: 'confirmation',

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home-page',
   standalone: true,
   imports: [],
-  templateUrl: './home.component.html'
+  templateUrl: './home-page.component.html'
 })
-export class HomeComponent {
+export class HomePageComponent {
   constructor(private router: Router) {}
 
   navigateToRequest(): void { this.router.navigate(['/inquiry-form']); }
