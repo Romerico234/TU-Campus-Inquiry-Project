@@ -1,5 +1,4 @@
 // Static file to keep track of counselors information/data
-
 import { CounselorData } from '../app/shared/models/counselor-data';
 
 export const counselors = {
