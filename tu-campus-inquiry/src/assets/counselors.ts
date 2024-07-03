@@ -4,6 +4,14 @@ import { CounselorData } from '../app/shared/models/counselor-data';
 export const counselors = {
   freshmanCounselors: [
     {
+      name: 'Kaila Groben',
+      email: 'kgroben@towson.edu',
+      jobTitle: 'Senior Assistant Director',
+      phone: '410-704-2904',
+      pronouns: 'she/her/hers',
+      link: 'https://www.towson.edu/admissions/undergrad/team/kmiller.html',
+    },
+    {
       name: 'Kayla Keegun',
       email: 'kkeegun@towson.edu',
       jobTitle: 'Senior Assistant Director',
@@ -26,14 +34,6 @@ export const counselors = {
       phone: '410-704-4359',
       pronouns: 'he/him/his',
       link: 'https://www.towson.edu/admissions/undergrad/team/daniel-zawacki.html',
-    },
-    {
-      name: 'Kaila Groben',
-      email: 'kgroben@towson.edu',
-      jobTitle: 'Senior Assistant Director',
-      phone: '410-704-2904',
-      pronouns: 'she/her/hers',
-      link: 'https://www.towson.edu/admissions/undergrad/team/kmiller.html',
     },
     {
       name: 'Aidevo Longe',
