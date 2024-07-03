@@ -4,6 +4,14 @@ import { CounselorData } from '../app/shared/models/counselor-data';
 export const counselors = {
   freshmanCounselors: [
     {
+      name: 'Jonathan Smith Jr',
+      email: 'jesmith@towson.edu',
+      jobTitle: 'Admissions Counselor',
+      phone: '410-704-4191',
+      pronouns: 'he/him/his',
+      link: 'https://www.towson.edu/admissions/undergrad/team/jonathan-smith.html',
+    },
+    {
       name: 'Kayla Keegun',
       email: 'kkeegun@towson.edu',
       jobTitle: 'Senior Assistant Director',
@@ -20,36 +28,12 @@ export const counselors = {
       link: 'https://www.towson.edu/admissions/undergrad/team/jack-neitz.html',
     },
     {
-      name: 'Dan Zawacki',
-      email: 'dzawacki@towson.edu',
-      jobTitle: 'Associate Director',
-      phone: '410-704-4359',
-      pronouns: 'he/him/his',
-      link: 'https://www.towson.edu/admissions/undergrad/team/daniel-zawacki.html',
-    },
-    {
-      name: 'Kaila Groben',
-      email: 'kgroben@towson.edu',
-      jobTitle: 'Senior Assistant Director',
-      phone: '410-704-2904',
-      pronouns: 'she/her/hers',
-      link: 'https://www.towson.edu/admissions/undergrad/team/kmiller.html',
-    },
-    {
       name: 'Aidevo Longe',
       email: 'alonge@towson.edu',
       jobTitle: 'Assistant Director',
       phone: '410-704-4719',
       pronouns: 'she/her/hers',
       link: 'https://www.towson.edu/admissions/undergrad/team/aidevo-longe.html',
-    },
-    {
-      name: 'Will Salzman',
-      email: 'wsalzman@towson.edu',
-      jobTitle: 'Assistant Director',
-      phone: '410-704-3693',
-      pronouns: 'he/him/his',
-      link: 'https://www.towson.edu/admissions/undergrad/team/will-salzman.html',
     },
     {
       name: 'Matt McMahon',
@@ -60,12 +44,20 @@ export const counselors = {
       link: 'https://www.towson.edu/admissions/undergrad/team/matt-mcmahon.html',
     },
     {
-      name: 'Jonathan Smith Jr',
-      email: 'jesmith@towson.edu',
-      jobTitle: 'Admissions Counselor',
-      phone: '410-704-4191',
+      name: 'Dan Zawacki',
+      email: 'dzawacki@towson.edu',
+      jobTitle: 'Associate Director',
+      phone: '410-704-4359',
       pronouns: 'he/him/his',
-      link: 'https://www.towson.edu/admissions/undergrad/team/jonathan-smith.html',
+      link: 'https://www.towson.edu/admissions/undergrad/team/daniel-zawacki.html',
+    },
+    {
+      name: 'Will Salzman',
+      email: 'wsalzman@towson.edu',
+      jobTitle: 'Assistant Director',
+      phone: '410-704-3693',
+      pronouns: 'he/him/his',
+      link: 'https://www.towson.edu/admissions/undergrad/team/will-salzman.html',
     },
     {
       name: 'Becca Haley',
@@ -74,10 +66,26 @@ export const counselors = {
       phone: '410-704-3147',
       pronouns: 'she/her/hers',
       link: 'https://www.towson.edu/admissions/undergrad/team/becca-halaney.html',
-    }
+    },
+    {
+      name: 'Kaila Groben',
+      email: 'kgroben@towson.edu',
+      jobTitle: 'Senior Assistant Director',
+      phone: '410-704-2904',
+      pronouns: 'she/her/hers',
+      link: 'https://www.towson.edu/admissions/undergrad/team/kmiller.html',
+    },
   ] as CounselorData[],
 
   transferCounselors: [
+    {
+      name: 'Viviana Vacaflor',
+      email: 'vvacaflor@towson.edu',
+      jobTitle: 'Admissions Counselor',
+      phone: '410-704-4451',
+      pronouns: 'she/her/hers',
+      link: 'https://www.towson.edu/admissions/undergrad/team/viviana-vacaflor.html',
+    },
     {
       name: 'Jeffrey Green',
       email: 'jgreen@towson.edu',
@@ -85,14 +93,6 @@ export const counselors = {
       phone: '410-704-4147',
       pronouns: 'he/him/his',
       link: 'https://www.towon.edu/admissions/undergrad/team/jeffery-green.html',
-    },
-    {
-      name: 'Brittani DuBose',
-      email: 'bdubose@towson.edu',
-      jobTitle: 'Assistant Director',
-      phone: '410-704-3623',
-      pronouns: 'she/her/hers',
-      link: 'https://www.towson.edu/admissions/undergrad/team/brittani-dubose.html',
     },
     {
       name: 'Kayla Bernier',
@@ -103,12 +103,12 @@ export const counselors = {
       link: 'https://www.towson.edu/admissions/undergrad/team/kayla-bernier.html',
     },
     {
-      name: 'Viviana Vacaflor',
-      email: 'vvacaflor@towson.edu',
-      jobTitle: 'Admissions Counselor',
-      phone: '410-704-4451',
+      name: 'Brittani DuBose',
+      email: 'bdubose@towson.edu',
+      jobTitle: 'Assistant Director',
+      phone: '410-704-3623',
       pronouns: 'she/her/hers',
-      link: 'https://www.towson.edu/admissions/undergrad/team/viviana-vacaflor.html',
+      link: 'https://www.towson.edu/admissions/undergrad/team/brittani-dubose.html',
     },
   ] as CounselorData[],
 
