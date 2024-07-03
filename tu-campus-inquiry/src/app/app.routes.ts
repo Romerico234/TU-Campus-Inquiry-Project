@@ -7,7 +7,8 @@ import { ConfirmationPageComponent } from './components/confirmation-page/confir
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
-import { ContactPageComponent } from './components/contact-page/contact-page.component';
+import { MeetCounselorsPageComponent } from './components/meet-counselors-page/meet-counselors-page.component';
+
 
 export const routes: Routes = [
     {
@@ -41,8 +42,8 @@ export const routes: Routes = [
         component: SubmissionPageComponent
     },
     {
-        path: 'contact-page',
-        component: ContactPageComponent
+        path: 'meet-counselors-page',
+        component: MeetCounselorsPageComponent
     },
     {
         path: '**',

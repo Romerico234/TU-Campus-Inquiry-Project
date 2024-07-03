@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <h2 class="mb-5 text-center text-primary">Meet the Admissions Counselors</h2>
+
+    <div class="mb-5">
+        <h3 class="mb-4 text-primary underline-bold">Freshman Admission Counselors</h3>
+        <div *ngFor="let counselor of freshmanCounselors" class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title text-success">{{ counselor.name }}</h4>
+                <p class="card-text"><strong>Title:</strong> {{ counselor.jobTitle }}</p>
+                <p class="card-text"><strong>Contact Information:</strong></p>
+                <p class="card-text">Email: <a href="mailto:{{ counselor.email }}"
+                        class="text-decoration-none text-info">{{ counselor.email }}</a></p>
+                <p class="card-text">Phone: {{ counselor.phone }}</p>
+                <p class="card-text">Pronouns: {{ counselor.pronouns }}</p>
+                <!-- <div *ngFor="let detail of counselor.details" class="card-text">
+                    <p>{{ detail }}</p>
+                </div> -->
+                <p><a [href]="counselor.link" target="_blank" class="btn btn-primary">Learn more about {{ counselor.name
+                        }}</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-5">
+        <h3 class="mb-4 text-primary underline-bold">Transfer Admissions Counselors</h3>
+        <div *ngFor="let counselor of transferCounselors" class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title text-success">{{ counselor.name }}</h4>
+                <p class="card-text"><strong>Title:</strong> {{ counselor.jobTitle }}</p>
+                <p class="card-text"><strong>Contact Information:</strong></p>
+                <p class="card-text">Email: <a href="mailto:{{ counselor.email }}"
+                        class="text-decoration-none text-info">{{ counselor.email }}</a></p>
+                <p class="card-text">Phone: {{ counselor.phone }}</p>
+                <p class="card-text">Pronouns: {{ counselor.pronouns }}</p>
+                <!-- <div *ngFor="let detail of counselor.details" class="card-text">
+                    <p>{{ detail }}</p>
+                </div> -->
+                <p><a [href]="counselor.link" target="_blank" class="btn btn-primary">Learn more about {{ counselor.name
+                        }}</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-5">
+        <h3 class="mb-4 text-primary underline-bold">International Students Counselors</h3>
+        <p class="lead">Please email <a [href]="'mailto:' + internationalCounselorsInfo"
+                class="text-decoration-none text-info">{{ internationalCounselorsInfo }}</a> to connect with an
+            international admissions counselor.</p>
+    </div>
+</div>
