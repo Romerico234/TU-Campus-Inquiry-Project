@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
+  private inquiryData: InquiryData | null = null;
 
   // API URL for the data
   private apiUrl = 'http://localhost:3000/api/inquiries';
@@ -46,5 +47,18 @@ export class DataService {
   // Mark inquiry as complete/incomplete
   toggleInquiryCompletion(id: string, completedValue: boolean) {
     return this.http.put(`${this.apiUrl}/${id}`, { completed: completedValue });
+  }
+
+  // The following three methods are use to handle the local transfer of data from the inquiry-form page to the confirmation page
+  setTemporaryInquiryData(data: InquiryData) {
+    this.inquiryData = data;
+  }
+
+  getTemporaryInquiryData(): InquiryData | null {
+    return this.inquiryData;
+  }
+
+  clearTemporaryInquiryData() {
+    this.inquiryData = null;
   }
 }

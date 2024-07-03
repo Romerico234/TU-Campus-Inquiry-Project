@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { InquiryData } from '../../shared/models/inquiry-data.models';
 import { ValidationService } from '../../shared/services/validation.service';
+import { DataService } from '../../shared/services/data.service';
+
 
 @Component({
   selector: 'app-inquiry-form-page',
@@ -17,7 +19,8 @@ export class InquiryFormPageComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private validationService: ValidationService
+    private validationService: ValidationService,
+    private dataService: DataService
   ) {}
 
   ngOnInit(): void { }
@@ -30,10 +33,11 @@ export class InquiryFormPageComponent implements OnInit {
       this.inquiry.created_at = new Date(); 
       this.inquiry.completed = false;
 
-      // If all form fields are valid, navigate to the confirmation route (confirmation component)
-      this.router.navigate(['/confirmation-page'], {
-        queryParams: { inquiry: JSON.stringify(this.inquiry), }
-      });
+      // Store the inquiry data temporarily
+      this.dataService.setTemporaryInquiryData(this.inquiry);
+
+      // Navigate to the confirmation route (confirmation component)
+      this.router.navigate(['/confirmation-page']);
     }
   }
 

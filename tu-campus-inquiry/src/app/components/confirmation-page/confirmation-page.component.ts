@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../shared/services/data.service';
@@ -20,7 +20,6 @@ export class ConfirmationPageComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private dataService: DataService,
     private emailService: EmailService,
     private validationService: ValidationService
@@ -28,13 +27,8 @@ export class ConfirmationPageComponent implements OnInit {
 
   ngOnInit(): void {
     // Load inquiry data from inquiry-form route (inquiry-form component)
-    this.route.queryParams.subscribe((params) => {
-      const inquiryData = params['inquiry'];
-      if (inquiryData) {
-        this.inquiry = JSON.parse(inquiryData);
-        this.validationService.validateForm(this.inquiry);
-      }
-    });
+    const inquiryData = this.dataService.getTemporaryInquiryData();
+    if (inquiryData) { this.inquiry = inquiryData; } // Not validating this because the app forces the user to always submit a valid form
   }
 
   // Selects the form field that is being edited
