@@ -1,5 +1,6 @@
 <h1 class="text-left my-4">Confirm Request</h1>
 
+<!--First Name Field-->
 <div *ngIf="inquiry" class="card p-4 shadow-sm">
   <div class="mb-3">
     <label class="form-label">First Name<span class="text-danger">*</span></label>
@@ -15,6 +16,7 @@
     <div *ngIf="invalidFields.firstName" class="text-danger mt-1">This field is required</div>
   </div>
 
+  <!--Last Name Field-->
   <div class="mb-3">
     <label class="form-label">Last Name<span class="text-danger">*</span></label>
     <div class="input-group">
@@ -29,6 +31,7 @@
     <div *ngIf="invalidFields.lastName" class="text-danger mt-1">This field is required</div>
   </div>
 
+  <!--Email Field-->
   <div class="mb-3">
     <label class="form-label">Email<span class="text-danger">*</span></label>
     <div class="input-group">
@@ -46,19 +49,24 @@
     </div>
   </div>
 
+  <!--Phone Number Field-->
   <div class="mb-3">
     <label class="form-label">Phone Number<span class="text-danger">*</span></label>
     <div class="input-group">
-      <input class="form-control" [(ngModel)]="inquiry.phone" [disabled]="!isFieldEditing('phone')" placeholder="###-###-####">
+      <input class="form-control" [(ngModel)]="inquiry.phone" [disabled]="!isFieldEditing('phone')" placeholder="##########">
       <div class="input-group-append">
         <button *ngIf="!isFieldEditing('phone')" class="btn btn-primary" (click)="editField('phone')">Edit</button>
         <button *ngIf="isFieldEditing('phone')" class="btn btn-success" (click)="saveChanges()">Save</button>
         <button *ngIf="isFieldEditing('phone')" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
       </div>
     </div>
-    <div *ngIf="invalidFields.phone" class="text-danger mt-1">This field is required</div>
+    <div *ngIf="invalidFields.phone" class="text-danger">
+      <ng-container *ngIf="!inquiry.phone">This field is required</ng-container>
+      <ng-container *ngIf="inquiry.phone && !isPhoneNumberValid(inquiry.phone)">This does not appear to be a valid phone number</ng-container>
+  </div>
   </div>
 
+  <!--Campus Field-->
   <div class="mb-3">
     <label class="form-label">Which campus (college) are you interested in?<span class="text-danger">*</span></label>
     <select class="form-select" [(ngModel)]="inquiry.campus" [disabled]="!isFieldEditing('campus')">
@@ -82,6 +90,7 @@
     </div>
   </div>
 
+  <!--Workshop Response Field-->
   <div class="mb-3">
     <label class="form-label">Which workshop would you like to learn more about?</label>
     <textarea class="form-control" [(ngModel)]="inquiry.workshopResponse"

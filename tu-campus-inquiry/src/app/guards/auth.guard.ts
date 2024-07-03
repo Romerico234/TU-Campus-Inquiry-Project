@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
 
     // If the user is not logged in, navigate to the login page and return false
     if (!isLoggedIn) {
-      this.router.navigate(['/db-admin/login']);
+      this.router.navigate(['/admin/login']);
       return false;
     }
 

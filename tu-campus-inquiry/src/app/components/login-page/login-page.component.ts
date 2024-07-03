@@ -21,7 +21,7 @@ export class LoginPageComponent {
     // If the entered username and passwords matches, redirect them to the inquiries route (inquiry-list component)
     if (this.username === validUsername && this.password === validPassword) {
       sessionStorage.setItem('isLoggedIn', 'true');
-      this.router.navigate(['/db-admin/list-of-inquiries']);
+      this.router.navigate(['/admin/list-of-inquiries']);
     } else { alert('Invalid credentials'); }
   }
 }

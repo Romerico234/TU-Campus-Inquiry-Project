@@ -99,4 +99,6 @@ export class ConfirmationPageComponent implements OnInit {
   get allFieldsValid(): boolean { return Object.values(this.invalidFields).every((field) => !field); }
 
   isEmailValid(email: string): boolean { return this.validationService.isEmailValid(email); }
+  
+  isPhoneNumberValid(phone: string): boolean { return this.validationService.isPhoneNumberValid(phone); }
 }

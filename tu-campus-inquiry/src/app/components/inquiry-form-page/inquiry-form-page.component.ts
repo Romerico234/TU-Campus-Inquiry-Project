@@ -44,4 +44,6 @@ export class InquiryFormPageComponent implements OnInit {
   get invalidFields() { return this.validationService.invalidFields; }
 
   isEmailValid(email: string): boolean { return this.validationService.isEmailValid(email); }
+
+  isPhoneNumberValid(phone: string): boolean { return this.validationService.isPhoneNumberValid(phone); }
 }

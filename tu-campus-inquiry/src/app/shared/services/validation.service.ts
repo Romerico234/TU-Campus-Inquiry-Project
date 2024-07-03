@@ -41,6 +41,9 @@ export class ValidationService {
     if (!inquiry.phone) {
       this.invalidFields.phone = true;
       isValid = false;
+    } else if (!this.isPhoneNumberValid(inquiry.phone)) {
+      this.invalidFields.phone = true;
+      isValid = false;
     }
 
     if (!inquiry.campus) {
@@ -60,10 +63,19 @@ export class ValidationService {
       campus: false,
     };
   }
-  
+
+
+  // Checks if an email address is in the correct format
   isEmailValid(email: string | undefined): boolean {
     if (!email) return false;
     const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
     return emailPattern.test(email);
+  }
+
+  // Checks if a phone nunber is a 10-digit number
+  isPhoneNumberValid(phone: string | undefined): boolean {
+    if (!phone) return false;
+    const phonePattern = /^\d{10}$/;
+    return phonePattern.test(phone);
   }
 }

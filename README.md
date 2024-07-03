@@ -3,7 +3,7 @@
 This repository contains my final project for COSC 484. This web application serves as a platform for students to submit requests and connect with counselors. Below are the details and setup instructions for the project.
 
 ## Technologies Used:
-- **MEAN Stack**: MongoDB, Express.js (CORS), Angular, Node.js
+- **MEAN Stack**: MongoDB, Express.js (with CORS), Angular, Node.js
 - **Bootstrap (Bootswatch)**: Used for styling the application
 - **Nodemailer**: Used for sending emails
 
@@ -11,7 +11,6 @@ This repository contains my final project for COSC 484. This web application ser
 The Towson University Campus Inquiry Form facilitates communication between students and counselors by allowing students to submit inquiries and requests directly through the application. Counselors can then respond to these inquiries.
 
 ## Planned Features:
-- I will implement validation for the phone number form field
 - I am currently in the process of implementing a chatbox feature.
 
 ## Setup Instructions:
