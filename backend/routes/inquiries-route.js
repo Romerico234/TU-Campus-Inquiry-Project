@@ -15,7 +15,9 @@ router.post("/", async (req, res) => {
             [collectionName.slice(0, -1)]: result,
             _id: result.insertedId,
         });
-    } catch (err) { res.status(500).json({ error: err.message }); }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 // Get all documents
@@ -24,7 +26,9 @@ router.get("/", async (req, res) => {
         const collection = req.db.collection(collectionName);
         const documents = await collection.find({}).toArray();
         res.status(200).json(documents);
-    } catch (err) { res.status(500).json({ error: err.message }); }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 // Get a single document by ID
@@ -41,7 +45,9 @@ router.get("/:id", async (req, res) => {
                 error: `${collectionName.slice(0, -1)} not found`,
             });
         }
-    } catch (err) { res.status(500).json({ error: err.message }); }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 // Update a document by ID
@@ -63,7 +69,9 @@ router.put("/:id", async (req, res) => {
                 error: `${collectionName.slice(0, -1)} not found`,
             });
         }
-    } catch (err) { res.status(500).json({ error: err.message }); }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 // Delete a document by ID
@@ -82,7 +90,9 @@ router.delete("/:id", async (req, res) => {
                 error: `${collectionName.slice(0, -1)} not found`,
             });
         }
-    } catch (err) { res.status(500).json({ error: err.message }); }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 // Send email route
@@ -105,13 +115,15 @@ router.post("/send-email", async (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log("Error details:", error);
-            res.status(500).json({ message: "Error sending email", error: error.toString() });
+            res.status(500).json({
+                message: "Error sending email",
+                error: error.toString(),
+            });
         } else {
             console.log("Email sent: " + info.response);
             res.status(200).json({ message: "Email sent successfully" });
         }
     });
 });
-
 
 module.exports = router;
