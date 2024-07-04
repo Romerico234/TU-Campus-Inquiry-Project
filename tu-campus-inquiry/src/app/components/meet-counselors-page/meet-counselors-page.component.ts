@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CounselorData } from '../../shared/models/counselor-data';
+import { CounselorData } from '../../shared/models/counselor-data.models';
 import { counselors } from '../../../assets/counselors';
 
 @Component({
