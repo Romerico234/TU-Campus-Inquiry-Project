@@ -1,3 +1,5 @@
+// This file helps us protect routes
+
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 

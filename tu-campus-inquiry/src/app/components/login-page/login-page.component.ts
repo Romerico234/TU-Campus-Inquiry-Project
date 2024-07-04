@@ -1,27 +1,35 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { loginConfig } from '../../../environments/login-config';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [FormsModule],
-  templateUrl: './login-page.component.html'
+  imports: [FormsModule, CommonModule],
+  templateUrl: './login-page.component.html',
 })
 export class LoginPageComponent {
-  username: string = '';
-  password: string = '';
+  adminCredentials = {
+    username: '',
+    password: ''
+  };
+
+  errorMessage: string | null = null;
 
   constructor(private router: Router) {}
 
   login(): void {
-    const validUsername = 'admin';
-    const validPassword = 'password123';
+    const validUsername = loginConfig.validUsername;
+    const validPassword = loginConfig.validPassword;
 
     // If the entered username and passwords matches, redirect them to the inquiries route (inquiry-list component)
-    if (this.username === validUsername && this.password === validPassword) {
+    if (this.adminCredentials.username === validUsername && this.adminCredentials.password === validPassword) {
       sessionStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['/admin/list-of-inquiries']);
-    } else { alert('Invalid credentials'); }
+    } else {
+      this.errorMessage = 'Invalid credentials';
+    }
   }
 }

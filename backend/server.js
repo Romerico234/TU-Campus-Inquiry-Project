@@ -47,7 +47,7 @@ connectToDatabase(); // Connecting to the database
 
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies
-app.use(cors()); // Middleware to enable CORS (Cross-origin resource sharing) for security reasons
+app.use(cors()); // Middleware to enable CORS (Cross-origin resource sharing) for security reasons 
 
 // Middleware to attach the database instance to each request
 app.use((req, res, next) => {

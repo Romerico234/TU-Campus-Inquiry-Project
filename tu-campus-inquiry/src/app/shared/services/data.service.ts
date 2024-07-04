@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { InquiryData } from '../models/inquiry-data.models';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class DataService {
   private inquiryData: InquiryData | null = null;
 
   // API URL for the data
-  private apiUrl = 'http://localhost:3000/api/inquiries';
+  private apiUrl = `${environment.apiUrl}/inquiries`;
 
   constructor(private http: HttpClient) { }
 
@@ -36,7 +37,7 @@ export class DataService {
   // Mark inquiry as complete/incomplete
   toggleInquiryCompletion(id: string, completedValue: boolean) { return this.http.put(`${this.apiUrl}/${id}`, { completed: completedValue }); }
 
-  // The following three methods are use to handle the local transfer of data from the inquiry-form page to the confirmation page
+  // The following three methods are use to handle the local transfer of data (primarily for the inquiry-form page to the confirmation page)
   setTemporaryInquiryData(data: InquiryData) { this.inquiryData = data; }
 
   getTemporaryInquiryData(): InquiryData | null { return this.inquiryData; }
