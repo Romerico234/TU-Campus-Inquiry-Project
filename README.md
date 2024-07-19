@@ -12,7 +12,7 @@ The Towson University Campus Inquiry Form facilitates communication between stud
 
 ## Planned Features:
 - Implement a chatbox feature.
-- Implement OAuth and better login feature
+- Implement Auth0 and better login feature
 - Deploy the website
 
 ## Setup Instructions:
