@@ -10,11 +10,6 @@ This repository contains my final project for COSC 484. This web application ser
 ## Project Overview:
 The Towson University Campus Inquiry Form facilitates communication between students and counselors by allowing students to submit inquiries and requests directly through the application. Counselors can then respond to these inquiries.
 
-## Planned Features:
-- Implement a chatbox feature.
-- Implement Auth0 and better login feature
-- Deploy the website
-
 ## Setup Instructions:
 To run the server locally, follow these steps:
 
